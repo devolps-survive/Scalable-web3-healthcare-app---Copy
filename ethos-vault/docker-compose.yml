@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ethos-vault-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ethos_vault
+    ports:
+      - "5432:5432"
+    volumes:
+      - ethos_vault_pgdata:/var/lib/postgresql/data
+
+volumes:
+  ethos_vault_pgdata:
